@@ -1,0 +1,5 @@
+include ':app'
+
+include 'Business:shakedemo'
+include 'Business:bindertest'
+include 'Business:pluginactivity'

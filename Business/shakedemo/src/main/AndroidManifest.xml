@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.shakedemo">
+
+    <application>
+        <activity android:name=".ShakeDemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+
+                <data android:mimeType="application/zip"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="text/comma-separated-values" />
+
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
