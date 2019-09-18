@@ -18,6 +18,10 @@ import com.example.bindertest.BinderActivity;
 
 import java.util.ArrayList;
 
+//git仓库这里，来到文件夹下执行github的一系列命令就好了
+//git add .
+//git commit -a -m "message"
+//git push
 public class MainActivity extends Activity {
     private RecyclerView mRecyclerView;
     private ArrayList<TestItem> mTestItemArrays = new ArrayList<TestItem>();
