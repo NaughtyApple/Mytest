@@ -32,4 +32,5 @@ dependencies {
     implementation project(':Business:bindertest')
     implementation project(':Business:shakedemo')
     implementation project(':Business:pluginactivity')
+    implementation project(':Business:contentprovidertest')
 }

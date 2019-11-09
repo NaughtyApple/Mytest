@@ -1,5 +1,6 @@
-include ':app'
+include ':app', ':contentprovidertest'
 
 include 'Business:shakedemo'
 include 'Business:bindertest'
 include 'Business:pluginactivity'
+include 'Business:contentprovidertest'

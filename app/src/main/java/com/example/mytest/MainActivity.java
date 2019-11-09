@@ -40,6 +40,10 @@ public class MainActivity extends Activity {
         mTestItemArrays.add(shakedemoItem);
         TestItem pluginActivityItem = new TestItem("插件化apk测试","com.example.pluginactivity.MainActivity");
         mTestItemArrays.add(pluginActivityItem);
+
+        TestItem contentProviderItem = new TestItem("ContentProvider测试","com.example.contentprovidertest.ContentProviderActivity");
+        mTestItemArrays.add(contentProviderItem);
+
     }
 
     class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
