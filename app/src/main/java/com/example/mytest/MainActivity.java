@@ -34,6 +34,8 @@ public class MainActivity extends Activity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new MyAdapter());
 
+        TestItem contentProviderItem = new TestItem("ContentProvider测试","com.example.contentprovidertest.ContentProviderActivity");
+        mTestItemArrays.add(contentProviderItem);
         TestItem binderItem = new TestItem("Binder测试","com.example.bindertest.BinderActivity");
         mTestItemArrays.add(binderItem);
         TestItem shakedemoItem = new TestItem("Shake测试","com.example.shakedemo.ShakeDemoActivity");
@@ -41,8 +43,7 @@ public class MainActivity extends Activity {
         TestItem pluginActivityItem = new TestItem("插件化apk测试","com.example.pluginactivity.MainActivity");
         mTestItemArrays.add(pluginActivityItem);
 
-        TestItem contentProviderItem = new TestItem("ContentProvider测试","com.example.contentprovidertest.ContentProviderActivity");
-        mTestItemArrays.add(contentProviderItem);
+
 
     }
 

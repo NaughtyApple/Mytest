@@ -7,8 +7,14 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class ShakeDemoActivity extends Activity {
+import com.example.baseactivity.BaseActivity;
+
+public class ShakeDemoActivity extends BaseActivity {
 
     static int mShaking = 0; // shake状态位
     static boolean mShakingInit = false; // shake状态位
@@ -18,7 +24,8 @@ public class ShakeDemoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shake_demo);
+        addContent(R.layout.activity_shake_demo);
+        setTitle("摇动测试");
 
         StepShakeListener listener = new StepShakeListener();
         SensorManager sm = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
@@ -30,14 +37,16 @@ public class ShakeDemoActivity extends Activity {
         Log.d("ldld","register shakelistener");
     }
 
-    private static class StepShakeListener implements SensorEventListener {
+    private class StepShakeListener implements SensorEventListener {
         public void shake() {
             mShaking = 1;
             mShakingInit =true;
+            ((TextView)findViewById(R.id.textView)).setText("检测到摇动");
             Log.d("ldld","detect shake");
         }
         public void shakeend() {
             mShaking = 3;
+            ((TextView)findViewById(R.id.textView)).setText("未检测到摇动");
             Log.d("ldld","shaking end");
         }
         private long lastTime;

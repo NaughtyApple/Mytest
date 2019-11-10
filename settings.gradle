@@ -1,6 +1,8 @@
-include ':app', ':contentprovidertest'
+include ':app'
 
 include 'Business:shakedemo'
 include 'Business:bindertest'
 include 'Business:pluginactivity'
 include 'Business:contentprovidertest'
+
+include 'lib:baseactivity'
