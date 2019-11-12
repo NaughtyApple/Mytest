@@ -34,6 +34,8 @@ public class MainActivity extends Activity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new MyAdapter());
 
+        TestItem jmmItem = new TestItem("JMM线程变量测试","com.example.jmmactivity.JmmActivity");
+        mTestItemArrays.add(jmmItem);
         TestItem contentProviderItem = new TestItem("ContentProvider测试","com.example.contentprovidertest.ContentProviderActivity");
         mTestItemArrays.add(contentProviderItem);
         TestItem binderItem = new TestItem("Binder测试","com.example.bindertest.BinderActivity");
