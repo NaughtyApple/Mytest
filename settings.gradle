@@ -1,9 +1,10 @@
-include ':app', ':jmmactivity'
+include ':app'
 
 include 'Business:shakedemo'
 include 'Business:bindertest'
 include 'Business:pluginactivity'
 include 'Business:contentprovidertest'
+include 'Business:littletest'
 include 'Business:jmmactivity'
 
 include 'lib:baseactivity'

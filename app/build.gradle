@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
 android {
     compileSdkVersion 29
@@ -35,5 +35,14 @@ dependencies {
     implementation project(':Business:contentprovidertest')
     implementation project(':Business:jmmactivity')
 
+    if (rootProject.ext.isApplication) {
+    } else {
+        implementation project(':Business:littletest')
+    }
 
+
+}
+
+ext {
+    isApplication = false
 }

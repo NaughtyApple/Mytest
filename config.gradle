@@ -1,0 +1,4 @@
+//统一版本控制
+ext {
+    isApplication = false
+}

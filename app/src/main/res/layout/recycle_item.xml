@@ -14,4 +14,11 @@
         android:textColor="#fff"
         android:text="default"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/white"
+        android:layout_below="@+id/itemName"
+        >
+    </View>
 </RelativeLayout>

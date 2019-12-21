@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.FileUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,9 @@ import android.widget.Toast;
 
 import com.example.bindertest.BinderActivity;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 //git仓库这里，来到文件夹下执行github的一系列命令就好了
@@ -33,6 +38,15 @@ public class MainActivity extends Activity {
         mRecyclerView = (RecyclerView)findViewById(R.id.recycleview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new MyAdapter());
+
+        //新增一个module，然后移动module到business目录，调整setting.gradle
+        //然后调整module的build.gradle的 apply plugin的设置
+        //app的build.gradle的编译 :business:module.
+        //然后添加下面的item
+        //小测试采用组件化配置
+
+        TestItem littleItem = new TestItem("小项目测试","com.example.littletest.LittleActivity");
+        mTestItemArrays.add(littleItem);
 
         TestItem jmmItem = new TestItem("JMM线程变量测试","com.example.jmmactivity.JmmActivity");
         mTestItemArrays.add(jmmItem);
@@ -70,6 +84,10 @@ public class MainActivity extends Activity {
                         clazz = Class.forName(mTestItemArrays.get(position).itemActivity);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
+                    }
+                    if(clazz == null){
+                        Toast.makeText(MainActivity.this,"未找到目标module",Toast.LENGTH_SHORT).show();
+                        return;
                     }
                     intent.setClass(MainActivity.this, clazz);
                     startActivity(intent);
