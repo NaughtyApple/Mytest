@@ -9,6 +9,10 @@ import android.view.View;
 
 import com.example.baseactivity.BaseActivity;
 
+//个人结论：非volatile变量跨线程读写快速，但从子线程读取时机不受控，容易set false后还进入循环
+//volatile变量则会慢一点，但是时序更稳定。。。因为他屏蔽了虚拟器中必要的代码优化，在必要时才使用此关键字
+
+//这里写的线程都没有退出机制的。。
 public class JmmActivity extends BaseActivity {
 
     boolean flag = true;
@@ -22,8 +26,7 @@ public class JmmActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                flag = false;
-                while(true){
+                while(flag){
                     Log.i("ldld","thread on flag:"+flag);
                 }
             }
@@ -32,25 +35,16 @@ public class JmmActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                volatileFlag = false;
-                while (true){
+                while (volatileFlag){
                     Log.i("ldld","volatile thread on volatileFlag:"+volatileFlag);
                 }
             }
         }).start();
 
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        flag = false;
-//        volatileFlag = false;
-
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                flag = false;
+                flag = false;
                 Log.i("ldld2","thread flag:"+flag);
             }
         });
@@ -58,7 +52,7 @@ public class JmmActivity extends BaseActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                volatileFlag = false;
+                volatileFlag = false;
                 Log.i("ldld2","volatile volatileFlag:"+volatileFlag);
             }
         });
