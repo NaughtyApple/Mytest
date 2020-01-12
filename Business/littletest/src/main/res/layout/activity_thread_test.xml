@@ -4,33 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".ThreadTestActivity"
     android:orientation="vertical"
-    tools:context=".LittleActivity">
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="thread_test~~~!!!!!!!!!!!!!!!!!!!"
+        >
+
+    </TextView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/threadTest"
-        android:text="threadTest"
+        android:id="@+id/thread1"
+        android:text="thread1"
         >
     </Button>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/newTask"
-        android:text="recycleVviewTest"
+        android:id="@+id/thread2"
+        android:text="thread2"
         >
     </Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/recycleview"
-        android:text="newTask"
-        >
-    </Button>
-
-
 
 </LinearLayout>

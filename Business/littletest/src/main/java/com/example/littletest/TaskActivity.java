@@ -1,9 +1,13 @@
 package com.example.littletest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 
 // Caused by: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity.
@@ -20,5 +24,10 @@ public class TaskActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
+
+
     }
+
+
+
 }

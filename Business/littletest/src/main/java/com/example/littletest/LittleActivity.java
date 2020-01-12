@@ -22,5 +22,23 @@ public class LittleActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.newTask).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this,RecycleViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.threadTest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this,ThreadTestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
