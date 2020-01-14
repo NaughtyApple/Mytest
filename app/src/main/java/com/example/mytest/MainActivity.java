@@ -43,7 +43,12 @@ public class MainActivity extends Activity {
         //然后调整module的build.gradle的 apply plugin的设置
         //app的build.gradle的编译 :business:module.
         //然后添加下面的item
+
         //小测试采用组件化配置
+
+
+        TestItem jniItem = new TestItem("Jni测试","com.example.jnitest.JniActivity");
+        mTestItemArrays.add(jniItem);
 
         TestItem littleItem = new TestItem("小项目测试","com.example.littletest.LittleActivity");
         mTestItemArrays.add(littleItem);

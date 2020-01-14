@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':jnitest'
 
 include 'Business:shakedemo'
 include 'Business:bindertest'
@@ -6,5 +6,6 @@ include 'Business:pluginactivity'
 include 'Business:contentprovidertest'
 include 'Business:littletest'
 include 'Business:jmmactivity'
+include 'Business:jnitest'
 
 include 'lib:baseactivity'
