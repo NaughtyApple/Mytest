@@ -2,9 +2,12 @@ package com.example.jnitest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.thirdappmodule.ThirdModuleActivity;
 
 public class JniActivity extends AppCompatActivity {
 
@@ -21,6 +24,12 @@ public class JniActivity extends AppCompatActivity {
         setContentView(R.layout.activity_jni);
 
         Toast.makeText(this,stringFromJNI(),Toast.LENGTH_SHORT).show();
+
+        //直接跳转aar，可以访问
+        Intent intent = new Intent();
+        intent.setClass(this, ThirdModuleActivity.class);
+        startActivity(intent);
+
     }
 
     /* A native method that is implemented by the
