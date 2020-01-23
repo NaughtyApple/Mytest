@@ -17,6 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    /**子模块含有aar，然后就需要这样写
+     * 这样主工程build的时候才能找到子module的aar
+     * 因为aar在主工程眼里也是module*/
+    repositories {
+        flatDir {
+            dirs 'libs', '../Business/jnitest/libs'
+        }
+    }
+
 }
 
 dependencies {
