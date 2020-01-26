@@ -32,7 +32,7 @@ public class LittleActivity extends Activity {
             }
         });
 
-        findViewById(R.id.threadTest).setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.threadTest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();

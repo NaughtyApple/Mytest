@@ -3,10 +3,13 @@ package com.example.jmmactivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.baseactivity.ArouterMonitor;
 import com.example.baseactivity.BaseActivity;
 
 //个人结论：非volatile变量跨线程读写快速，但从子线程读取时机不受控，容易set false后还进入循环
@@ -56,6 +59,24 @@ public class JmmActivity extends BaseActivity {
                 Log.i("ldld2","volatile volatileFlag:"+volatileFlag);
             }
         });
+
+        Toast.makeText(this,ArouterMonitor.getInstance(this).getMemoryString(),Toast.LENGTH_SHORT).show();
+
+        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Class<?> shakeClass = Class.forName("com.example.shakedemo.ShakeDemoActivity");
+                    shakeClass.newInstance();
+                    Intent intent = new Intent();
+                    intent.setClass(JmmActivity.this,shakeClass);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
     }
 

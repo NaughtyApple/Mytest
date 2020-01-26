@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.baseactivity.ArouterMonitor;
 import com.example.baseactivity.BaseActivity;
 
 public class ShakeDemoActivity extends BaseActivity {
@@ -35,6 +36,10 @@ public class ShakeDemoActivity extends BaseActivity {
                 SensorManager.SENSOR_DELAY_FASTEST);
         mStepshakeListener = listener;
         Log.d("ldld","register shakelistener");
+
+        ArouterMonitor.getInstance(this).setMemoryString("这是来自shakedemoactivity的初始化");
+
+
     }
 
     private class StepShakeListener implements SensorEventListener {
