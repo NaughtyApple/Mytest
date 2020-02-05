@@ -40,5 +40,15 @@ public class LittleActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.sqlTest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this,SQLTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
