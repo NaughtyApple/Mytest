@@ -45,6 +45,8 @@ dependencies {
     implementation project(':Business:contentprovidertest')
     implementation project(':Business:jmmactivity')
     implementation project(':Business:jnitest')
+    implementation project(':Business:sockettest')
+
 
 
     if (rootProject.ext.isApplication) {

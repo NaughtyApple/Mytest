@@ -41,17 +41,15 @@ public class MainActivity extends Activity {
 
         //新增一个module，然后移动module到business目录，调整setting.gradle
         //然后调整module的build.gradle的 apply plugin的设置
-        //app的build.gradle的编译 :business:module.
+        //app的build.gradle的编译 :business:module. (删除module的mainfest中的android:theme="@style/AppTheme"，有报错情况)
         //然后添加下面的item
 
         //小测试采用组件化配置
-
+        TestItem littleItem = new TestItem("小项目测试","com.example.littletest.LittleActivity");
+        mTestItemArrays.add(littleItem);
 
         TestItem jniItem = new TestItem("Jni测试","com.example.jnitest.JniActivity");
         mTestItemArrays.add(jniItem);
-
-        TestItem littleItem = new TestItem("小项目测试","com.example.littletest.LittleActivity");
-        mTestItemArrays.add(littleItem);
 
         TestItem jmmItem = new TestItem("JMM线程变量测试","com.example.jmmactivity.JmmActivity");
         mTestItemArrays.add(jmmItem);
@@ -63,6 +61,8 @@ public class MainActivity extends Activity {
         mTestItemArrays.add(shakedemoItem);
         TestItem pluginActivityItem = new TestItem("插件化apk测试","com.example.pluginactivity.MainActivity");
         mTestItemArrays.add(pluginActivityItem);
+        TestItem socketActivityItem = new TestItem("socket跨进程通信测试","com.example.sockettest.SocketActivity");
+        mTestItemArrays.add(socketActivityItem);
 
 
 

@@ -8,5 +8,6 @@ include 'Business:contentprovidertest'
 include 'Business:littletest'
 include 'Business:jmmactivity'
 include 'Business:jnitest'
+include 'Business:sockettest'
 
 include 'lib:baseactivity'
