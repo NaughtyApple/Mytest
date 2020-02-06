@@ -3,7 +3,14 @@
     package="com.example.bindertest">
 
     <application>
-        <activity android:name=".BinderActivity"></activity>
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":binderServerProcess"
+            ></service>
+
+        <activity android:name=".BinderActivity" />
     </application>
 
 </manifest>
