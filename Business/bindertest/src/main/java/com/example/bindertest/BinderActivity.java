@@ -37,9 +37,11 @@ public class BinderActivity extends Activity {
 
         //服务端
         //1、添加aidl文件
-        //2、build一次后生成 generated java 文件
+        //2、build一次后生成 generated java 文件 //此处修改build.gradle从28到29.
         //3、根据ibinder文件，在service中实现binder接口中的函数
         //4、启动该service
+
+        //进程分为共有：，和私有进程，在写的时候有这个讲究，service起新进程的时候用.
 
         findViewById(R.id.start_server).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +49,6 @@ public class BinderActivity extends Activity {
                 startService(new Intent(BinderActivity.this,MyService.class));
             }
         });
-
-
 
         //客户端
         //1、仅需要一步，即需要service的bind使用方法，需要bindservice.
