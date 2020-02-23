@@ -9,5 +9,6 @@ include 'Business:littletest'
 include 'Business:jmmactivity'
 include 'Business:jnitest'
 include 'Business:sockettest'
+include 'Business:xposedtest'
 
 include 'lib:baseactivity'

@@ -44,6 +44,9 @@ public class MainActivity extends Activity {
         //app的build.gradle的编译 :business:module. (删除module的mainfest中的android:theme="@style/AppTheme"，有报错情况)
         //然后添加下面的item
 
+        TestItem xposedItem = new TestItem("Xposed测试","com.example.xposedtest.XposedActivity");
+        mTestItemArrays.add(xposedItem);
+
         //小测试采用组件化配置
         TestItem littleItem = new TestItem("小项目测试","com.example.littletest.LittleActivity");
         mTestItemArrays.add(littleItem);

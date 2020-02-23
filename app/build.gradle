@@ -27,6 +27,15 @@ android {
         }
     }
 
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a','x86_64'
+            universalApk true
+        }
+    }
+
 }
 
 dependencies {
@@ -46,6 +55,7 @@ dependencies {
     implementation project(':Business:jmmactivity')
     implementation project(':Business:jnitest')
     implementation project(':Business:sockettest')
+    implementation project(':Business:xposedtest')
 
 
 

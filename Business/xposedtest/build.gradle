@@ -6,19 +6,13 @@ android {
 
 
     defaultConfig {
-//        applicationId "com.example.jnitest"
-        minSdkVersion 22
+        //applicationId "com.example.xposedtest"
+        minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        multiDexEnabled true
-        ndk {
-            abiFilters "armeabi-v7a", "x86" //一般只配置"armeabi-v7a"也是可行的
-        }
-
     }
 
     buildTypes {
@@ -27,25 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        cmake {
-            path file('src/main/cpp/CMakeLists.txt')
-        }
-    }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['jniLibs']
-        }
-    }
-
-    //aar的放置文件夹libs
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
-
 
 }
 
@@ -57,8 +32,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    //aar引入写法
-    implementation(name: 'thirdappmodule', ext: 'aar')
-
 }
