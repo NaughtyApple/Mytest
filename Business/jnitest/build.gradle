@@ -27,6 +27,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    //没有下面的cmake会找不到so方法
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
@@ -35,11 +37,11 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['jniLibs']
+            jniLibs.srcDirs = ['src/main/cpp']
         }
     }
 
-    //aar的放置文件夹libs
+    //aar的放置文件夹libsF
     repositories {
         flatDir {
             dirs 'libs'

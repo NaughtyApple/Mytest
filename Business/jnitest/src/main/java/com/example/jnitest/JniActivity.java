@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,17 +19,25 @@ public class JniActivity extends AppCompatActivity {
     //调用之后会在build/immedertiate/x86/xxxx.so 会生成的so
     //so放到libs文件下，配置sourceset，修改cmakelist文件处理掉c文件的引用..
 
+    public TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jni);
+        textView = findViewById(R.id.text);
+        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = stringFromJNI();
+                textView.setText(str);
+            }
+        });
 
-        Toast.makeText(this,stringFromJNI(),Toast.LENGTH_SHORT).show();
 
         //直接跳转aar，可以访问
-        Intent intent = new Intent();
-        intent.setClass(this, ThirdModuleActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent();
+//        intent.setClass(this, ThirdModuleActivity.class);
+//        startActivity(intent);
 
     }
 
@@ -57,6 +66,8 @@ public class JniActivity extends AppCompatActivity {
      * /data/data/com.example.hellojni/lib/libhello-jni.so at
      * installation time by the package manager.
      */
+
+    //下面这个很重要，写cpp也会生成
     static {
         System.loadLibrary("hello-jni");
     }
