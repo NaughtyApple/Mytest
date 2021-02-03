@@ -67,8 +67,6 @@ public class MainActivity extends Activity {
         TestItem socketActivityItem = new TestItem("socket跨进程通信测试","com.example.sockettest.SocketActivity");
         mTestItemArrays.add(socketActivityItem);
 
-
-
     }
 
     class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {

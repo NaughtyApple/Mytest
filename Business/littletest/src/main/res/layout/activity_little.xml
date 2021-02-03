@@ -37,7 +37,13 @@
         android:text="测试安卓数据库sqlLite"
         >
     </Button>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/producer_consumer"
+        android:text="生产消费者"
+        >
+    </Button>
 
 
 </LinearLayout>

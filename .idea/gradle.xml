@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Business" />
+            <option value="$PROJECT_DIR$/Business/bindertest" />
+            <option value="$PROJECT_DIR$/Business/contentprovidertest" />
+            <option value="$PROJECT_DIR$/Business/jmmactivity" />
+            <option value="$PROJECT_DIR$/Business/jnitest" />
+            <option value="$PROJECT_DIR$/Business/littletest" />
+            <option value="$PROJECT_DIR$/Business/pluginactivity" />
+            <option value="$PROJECT_DIR$/Business/shakedemo" />
+            <option value="$PROJECT_DIR$/Business/sockettest" />
+            <option value="$PROJECT_DIR$/Business/xposedtest" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/lib/baseactivity" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

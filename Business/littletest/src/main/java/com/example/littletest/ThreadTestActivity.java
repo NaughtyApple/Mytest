@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.MessageQueue;
 import android.util.Log;
 import android.view.View;
 
@@ -21,7 +22,7 @@ public class ThreadTestActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread_test);
-
+        MessageQueue m;
         thread1 = new Thread(new Runnable() {
             @Override
             public void run() {

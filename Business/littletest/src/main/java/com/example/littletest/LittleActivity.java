@@ -1,11 +1,11 @@
 package com.example.littletest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.littletest.producerComsumer.ProducerConsumerActivity;
 
 public class LittleActivity extends Activity {
 
@@ -49,6 +49,16 @@ public class LittleActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.producer_consumer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, ProducerConsumerActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
