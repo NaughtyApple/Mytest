@@ -3,10 +3,9 @@ apply from: "config.gradle"
 
 buildscript {
     repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
         google()
         jcenter()
-        
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
@@ -18,11 +17,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
         google()
         jcenter()
-
-
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
     }
 }
 
