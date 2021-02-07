@@ -10,6 +10,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/pureTest"
+        android:text="测试模版"
+        >
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/threadTest"
         android:text="threadTest"
         >
@@ -42,6 +50,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/producer_consumer"
         android:text="生产消费者"
+        >
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/synchonizedTest"
+        android:text="synchonized测试"
         >
     </Button>
 

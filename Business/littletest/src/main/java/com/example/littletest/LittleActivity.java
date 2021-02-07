@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.littletest.producerComsumer.ProducerConsumerActivity;
+import com.example.littletest.puretest.PureActivity;
+import com.example.littletest.synchonizedTest.SynchonizedActivity;
 
 public class LittleActivity extends Activity {
 
@@ -13,6 +15,15 @@ public class LittleActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_little);
+
+        findViewById(R.id.pureTest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, PureActivity.class);
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.newTask).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +66,15 @@ public class LittleActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(LittleActivity.this, ProducerConsumerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.synchonizedTest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, SynchonizedActivity.class);
                 startActivity(intent);
             }
         });

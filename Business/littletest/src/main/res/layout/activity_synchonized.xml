@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".synchonizedTest.SynchonizedActivity">
+    <Button
+        android:id="@+id/no_synchonized"
+        android:text="不加synchnized的，add 1万次 成员变量sum的结果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/no_synchonized_static"
+        android:text="不加synchnized的，add 1000次 静态变量sum的结果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
+        android:id="@+id/synchonized_static"
+        android:text="加synchnized的，add 1000次 静态变量sum的结果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/checksum"
+        android:text="checksum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/clearsum"
+        android:text="清空sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <View
+        android:background="#699"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+    <Button
+        android:id="@+id/thread1_in_thread2_wait"
+        android:text="线程1进入锁区，线程2进不去卡住的实验.."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <View
+        android:background="#699"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+    <Button
+        android:id="@+id/lock_and_await"
+        android:text="使用一下lock 和 condition..这里lock进去之后直接await.."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/siganl_it"
+        android:text="手动把这个给他signal起来...."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+</LinearLayout>
