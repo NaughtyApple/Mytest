@@ -59,6 +59,13 @@
         android:text="synchonized测试"
         >
     </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/owndefinedView"
+        android:text="自定义View"
+        >
+    </Button>
 
 
 </LinearLayout>
