@@ -73,4 +73,31 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_height="wrap_content">
     </Button>
 
+    <View
+        android:background="#699"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+    <Button
+        android:id="@+id/third_process_wait"
+        android:text="调用三个线程 并wait阻塞.."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/notify_one"
+        android:text="手动notify一个..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/notify_all"
+        android:text="一起全部notify 试试..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
 </LinearLayout>

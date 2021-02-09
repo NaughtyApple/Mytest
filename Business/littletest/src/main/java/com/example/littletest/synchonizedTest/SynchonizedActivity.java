@@ -17,6 +17,13 @@ public class SynchonizedActivity extends AppCompatActivity {
     private int sum = 0;
     private static int staticSum = 0;
 
+    public void addStatic(){
+        staticSum ++ ;
+    }
+    public synchronized void syncAddStatic(){
+        staticSum ++ ;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,27 +118,119 @@ public class SynchonizedActivity extends AppCompatActivity {
         findViewById(R.id.lock_and_await).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                LockthreadIn("lock线程1");
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
             }
         });
 
         findViewById(R.id.siganl_it).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reentrantLock.lock();
+                try {
+                    //lock放在try里面就会报错,拿到锁之后才能进入try catch...
+                    //reentrantLock.lock();
+                    Log.i("ldld"," siganl_it siganl_it siganl_it ...");
+                    condition.signal();
+                } finally {
+                    reentrantLock.unlock();
+                }
+            }
+        });
+
+        findViewById(R.id.third_process_wait).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                for (int i = 0; i< 3; i ++){
+                    final int finalI = i;
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                threadWait("线程 "+ String.valueOf(finalI));
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
+                }
 
             }
         });
+        findViewById(R.id.notify_one).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    threadNotifyOne();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        findViewById(R.id.notify_all).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    threadNotifyAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+    }
+
+    public void threadWait(String inword) throws InterruptedException {
+        synchronized(this){
+            Log.i("ldld", "this 是什么东西:"+ this.toString() );
+            Log.i("ldld",inword +" 准备 进入wait..");
+            this.wait();
+            Log.i("ldld",inword +"休眠结束，准备退出");
+        }
+    }
+    public void threadNotifyOne() throws InterruptedException {
+        synchronized(this){
+            Log.i("ldld", " 调用一次notify.");
+            this.notify();
+        }
+    }
+    public void threadNotifyAll() throws InterruptedException {
+        synchronized(this){
+            Log.i("ldld", " 调用notifyall.");
+            this.notifyAll();
+        }
     }
 
     ReentrantLock reentrantLock = new ReentrantLock();
     Condition condition = reentrantLock.newCondition();
 
-    public void addStatic(){
-        staticSum ++ ;
-    }
+    public void LockthreadIn(String inword) throws InterruptedException {
+            Log.i("ldld",inword +" 准备进入同步代码块......");
 
-    public synchronized void syncAddStatic(){
-        staticSum ++ ;
+            reentrantLock.lock();
+            try {
+                double random = Math.random();
+                long number = (long)(random*1000);
+                Log.i("ldld",inword +" lock 线程准备 释放锁.."+ number);
+                condition.await();
+            }catch (Exception e){
+                Log.i("ldld",inword +" lock 线程 Exception.."+ e.toString() );
+            }finally {
+                reentrantLock.unlock();
+                Log.i("ldld",inword +"lock 线程 释放锁...");
+            }
+            Log.i("ldld",inword +"lock 线程 准备退出 ...");
+
     }
 
     public void threadIn(String inword) throws InterruptedException {
@@ -145,6 +244,7 @@ public class SynchonizedActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 }
