@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.littletest.owndefinedViewTest.OwnDefinedViewActivity;
 import com.example.littletest.producerComsumer.ProducerConsumerActivity;
 import com.example.littletest.puretest.PureActivity;
+import com.example.littletest.recycleviewTest.RecycleViewTestActivity;
 import com.example.littletest.synchonizedTest.SynchonizedActivity;
 
 import java.util.concurrent.ThreadPoolExecutor;
@@ -102,6 +103,14 @@ public class LittleActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(LittleActivity.this, OwnDefinedViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.test_recycleview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, RecycleViewTestActivity.class);
                 startActivity(intent);
             }
         });

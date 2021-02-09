@@ -66,6 +66,12 @@
         android:text="自定义View"
         >
     </Button>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_recycleview"
+        android:text="观看recycleview的代码"
+        >
+    </Button>
 
 </LinearLayout>
