@@ -4,31 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".threadTest.ThreadTestActivity"
     android:orientation="vertical"
-    >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="thread_test~~~!!!!!!!!!!!!!!!!!!!"
-        >
-
-    </TextView>
+    tools:context=".threadPoolTest.ThreadPoolActivity">
 
     <Button
+        android:id="@+id/add_callable"
+        android:text="添加callable对象是 什么情况...."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/thread1"
-        android:text="thread1"
-        >
+        tools:ignore="MissingConstraints">
     </Button>
+
     <Button
+        android:id="@+id/shut_down_threadpool"
+        android:text="关闭线程池 shutdown...."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/thread2"
-        android:text="thread2"
-        >
+        tools:ignore="MissingConstraints">
+
     </Button>
 
 </LinearLayout>

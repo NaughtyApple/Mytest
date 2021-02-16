@@ -7,13 +7,13 @@ if (rootProject.ext.isApplication) {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 27
     buildToolsVersion "29.0.2"
 
     defaultConfig {
         //applicationId "com.example.littletest"  //library不能有这个id设置
         minSdkVersion 22
-        targetSdkVersion 29
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -39,5 +39,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.android.support:recyclerview-v7:26.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
 }
