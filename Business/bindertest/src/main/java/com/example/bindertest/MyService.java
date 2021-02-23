@@ -26,8 +26,6 @@ public class MyService extends Service {
         public String getServerInfo() throws RemoteException {
             return "这是来自binderServer的String信息";
         }
-
-
     };
 
 
