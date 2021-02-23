@@ -100,4 +100,33 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_height="wrap_content">
     </Button>
 
+    <View
+        android:background="#699"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+    <Button
+        android:id="@+id/direct_lock"
+        android:text="直接先上锁.. ===..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/lock_lockinterruptly"
+        android:text="起两个thread，一个获取lock，一个获取lockinterupt..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/interrupt_two"
+        android:text="尝试两个interrupt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+
+
 </LinearLayout>
