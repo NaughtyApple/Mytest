@@ -52,8 +52,8 @@ public class OwnDefinedViewActivity extends AppCompatActivity {
                 }
 
                 //决定view的ontouchevent会不会顺利执行到...
-                return false;
-//                return true;
+//                return false;
+                return true;
 
             }
         });

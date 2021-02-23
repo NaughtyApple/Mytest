@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.littletest.R;
 
@@ -79,8 +80,6 @@ public class SetMapListQueueActivity extends AppCompatActivity {
         for(int i=0;i<arraglistPriorityQueue.size();i++){
             Log.i("ldld","arraglistPriorityQueue priotity content:"+ arraglistPriorityQueue.get(i) );
         }
-
-
 
         //Queue
         Queue<Integer> queue = new Queue<Integer>() {
@@ -180,5 +179,15 @@ public class SetMapListQueueActivity extends AppCompatActivity {
             }
         };
 
+        findViewById(R.id.exe_calculate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
+
+
 }
