@@ -9,6 +9,7 @@
 
     <EditText
         android:layout_width="200dp"
+        android:hint="输入table的name,作为key_"
         android:layout_height="wrap_content"
         android:id="@+id/edit_student"
         >
@@ -17,7 +18,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/add_sql_data"
-        android:text="增加表数据"
+        android:text="增加一条随机表数据"
+        ></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_transaction"
+        android:text="试试事务的概念"
+        ></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_all_sql_data"
+        android:text="直接增加非常多条表数据"
         ></Button>
 
     <Button
