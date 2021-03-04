@@ -54,7 +54,10 @@ public class SetMapListQueueActivity extends AppCompatActivity {
         HashMap map = new HashMap();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
 
-        //List
+        //ArrayList　　底层实现是动态数组
+        //Vector　　　底层实现是动态数组
+        //LinkedList　 底层实现是双链表　　
+
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();
 

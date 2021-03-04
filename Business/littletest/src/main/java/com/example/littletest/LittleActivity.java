@@ -17,6 +17,7 @@ import com.example.littletest.recycleviewTest.RecycleViewTestActivity;
 import com.example.littletest.setmaplistqueue.SetMapListQueueActivity;
 import com.example.littletest.sortTest.SortTestActivity;
 import com.example.littletest.synchonizedTest.SynchonizedActivity;
+import com.example.littletest.templateTest.TemplateTestActivity;
 import com.example.littletest.threadPoolTest.ThreadPoolActivity;
 import com.example.littletest.threadTest.ThreadTestActivity;
 
@@ -167,6 +168,14 @@ public class LittleActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(LittleActivity.this, IntentServiceTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.template_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, TemplateTestActivity.class);
                 startActivity(intent);
             }
         });

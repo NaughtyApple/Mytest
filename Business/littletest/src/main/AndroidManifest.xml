@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".IntentServiceTest.IntentServiceTestActivity"></activity>
-        <service android:enabled="true"
-            android:name=".IntentServiceTest.MyIntentService" >
-        </service>
+        <activity android:name=".templateTest.TemplateTestActivity"></activity>
+        <activity android:name=".IntentServiceTest.IntentServiceTestActivity" />
+
+        <service
+            android:name=".IntentServiceTest.MyIntentService"
+            android:enabled="true"></service>
 
         <activity android:name=".sortTest.SortTestActivity" />
         <activity android:name=".threadPoolTest.ThreadPoolActivity" />
@@ -38,8 +40,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".TaskActivity" />
-
-
     </application>
 
 </manifest>

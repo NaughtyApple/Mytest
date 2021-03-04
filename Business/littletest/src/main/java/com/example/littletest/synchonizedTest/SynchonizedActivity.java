@@ -187,6 +187,45 @@ public class SynchonizedActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.lock_lockinterruptly).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    thread1.start();
+                    thread2.start();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        findViewById(R.id.interrupt_two).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    thread2.interrupt();
+
+                    thread1.interrupt();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        findViewById(R.id.direct_lock).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    reentrantLock1.lock();
+                    reentrantLock2.lock();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+
 
     }
 
@@ -213,6 +252,66 @@ public class SynchonizedActivity extends AppCompatActivity {
 
     ReentrantLock reentrantLock = new ReentrantLock();
     Condition condition = reentrantLock.newCondition();
+
+    //ReentrantLock的中断和非中断加锁模式的区别在于：线程尝试获取锁操作失败后，在等待过程中，如果该线程被其他线程中断了，它是如何响应中断请求的。
+    // lock方法会忽略中断请求，继续获取锁直到成功；而lockInterruptibly则直接抛出中断异常来立即响应中断，由上层调用者处理中断。
+    ReentrantLock reentrantLock1 = new ReentrantLock();
+    ReentrantLock reentrantLock2 = new ReentrantLock();
+
+    private Thread thread1 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            Log.i("ldld","thread 1 跑起来");
+
+            double a = 0;
+            try {
+                Log.i("ldld","thread 1 尝试获取锁");
+                reentrantLock1.lock();
+                for(int i = 0; i< 10000; i ++){
+                    for(int j = 0; j< 1000; j ++){
+                        for(int m = 0; m< 1000; m ++){
+                            a ++;
+                        }
+                    }
+                }
+                Log.i("ldld","thread 1 执行完了..........");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                reentrantLock1.unlock();
+                Log.i("ldld","thread 1 释放锁....");
+            }
+            Log.i("ldld","thread 1 跑完了");
+        }
+    });
+
+    private Thread thread2 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            Log.i("ldld","thread 2 跑起来");
+            int a = 0;
+            try {
+                Log.i("ldld","thread 2 尝试获取锁...");
+                reentrantLock2.lockInterruptibly();
+                for(int i = 0; i< 10000; i ++){
+                    for(int j = 0; j< 1000; j ++){
+                        for(int m = 0; m< 1000; m ++){
+                            a ++;
+                        }
+                    }
+                }
+                Log.i("ldld","thread 2 执行完了..........");
+            } catch (InterruptedException e) {
+                Log.i("ldld","thread 2 就可以中断出来了");
+                e.printStackTrace();
+            }finally {
+//                reentrantLock2.unlock();
+                Log.i("ldld","thread 2 没获取到直接中断出来....");
+                Log.i("ldld","thread 2 释放锁....");
+            }
+            Log.i("ldld","thread 2 跑完了...");
+        }
+    });
 
     public void LockthreadIn(String inword) throws InterruptedException {
             Log.i("ldld",inword +" 准备进入同步代码块......");

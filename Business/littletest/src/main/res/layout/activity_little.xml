@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,117 +7,134 @@
     android:orientation="vertical"
     tools:context=".LittleActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pureTest"
-        android:text="测试模版"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
-    </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/threadTest"
-        android:text="线程使用的一些测试.."
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pureTest"
+            android:text="测试模版"
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/newTask"
-        android:text="newTask..."
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/threadTest"
+            android:text="线程使用的一些测试.."
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/recycleview"
-        android:text="recycleview的add和clear"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sqlTest"
-        android:text="测试安卓数据库sqlLite"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/producer_consumer"
-        android:text="生产消费者"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/synchonizedTest"
-        android:text="synchonized测试"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/owndefinedView"
-        android:text="自定义View"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_recycleview"
-        android:text="观看recycleview的代码"
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_set_map_list_queue"
-        android:text="java的各种集合类.."
-        >
-    </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_proxy_and_hook"
-        android:text="测试java的静态动态代理模式、hook.."
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newTask"
+            android:text="newTask..."
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_okhttp"
-        android:text="测试_test_okhttp____!!!"
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycleview"
+            android:text="recycleview的add和clear"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sqlTest"
+            android:text="测试安卓数据库sqlLite"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/producer_consumer"
+            android:text="生产消费者"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/synchonizedTest"
+            android:text="synchonized测试"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/owndefinedView"
+            android:text="自定义View"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_recycleview"
+            android:text="观看recycleview的代码"
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_set_map_list_queue"
+            android:text="java的各种集合类.."
+            >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_proxy_and_hook"
+            android:text="测试java的静态动态代理模式、hook.."
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_thread_pool"
-        android:text="测试_线程池 相关的内容"
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_okhttp"
+            android:text="测试_test_okhttp____!!!"
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test_sort"
-        android:text="排序相关的一个test"
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_thread_pool"
+            android:text="测试_线程池 相关的内容"
+            >
+        </Button>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/intent_service_test"
-        android:text="IntentService_这个在背后执行确实很巴适..."
-        >
-    </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_sort"
+            android:text="排序相关的一个test"
+            >
+        </Button>
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/intent_service_test"
+            android:text="IntentService_这个在背后执行确实很巴适..."
+            >
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/template_test"
+            android:text="自定义 泛型的 test.. ..."
+            >
+        </Button>
+
+    </LinearLayout>
+
+
+</ScrollView>
