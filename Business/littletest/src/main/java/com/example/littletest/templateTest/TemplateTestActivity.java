@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 public class TemplateTestActivity extends AppCompatActivity {
 
-    @LdInfo(value = "dddddd", isDelete = false )
+//    @LdInfo(value = "dddddd", isDelete = false )
     class Box<T> {
         private T data;
 
@@ -41,10 +41,10 @@ public class TemplateTestActivity extends AppCompatActivity {
         Class aClass = box.getClass();
 
         //获取类中的方法
-        Annotation annotation = aClass.getAnnotation(LdInfo.class);
-        if(annotation != null){
-            Log.i("ldld","annotation annotation annotation:" + annotation.toString()  );
-        }
+//        Annotation annotation = aClass.getAnnotation(LdInfo.class);
+//        if(annotation != null){
+//            Log.i("ldld","annotation annotation annotation:" + annotation.toString()  );
+//        }
 
 
     }

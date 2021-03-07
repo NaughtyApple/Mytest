@@ -179,6 +179,14 @@ public class LittleActivity extends Activity {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.adb_back_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(LittleActivity.this, AdbTestActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

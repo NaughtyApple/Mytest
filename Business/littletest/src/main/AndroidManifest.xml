@@ -12,12 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true">
-        <activity android:name=".templateTest.TemplateTestActivity"></activity>
+        <activity android:name=".AdbTestActivity"></activity>
+        <activity android:name=".templateTest.TemplateTestActivity" />
         <activity android:name=".IntentServiceTest.IntentServiceTestActivity" />
 
         <service
             android:name=".IntentServiceTest.MyIntentService"
-            android:enabled="true"></service>
+            android:enabled="true" />
 
         <activity android:name=".sortTest.SortTestActivity" />
         <activity android:name=".threadPoolTest.ThreadPoolActivity" />
